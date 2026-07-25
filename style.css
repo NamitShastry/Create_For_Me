@@ -1,148 +1,106 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-body {
-    background-color: #070a13;
-    color: #ffffff;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* Background Canvas & Nebulas */
-#space-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.nebula {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.4;
-    z-index: 2;
-    pointer-events: none;
-}
-.nebula-1 { width: 500px; height: 500px; background: radial-gradient(circle, #8b5cf6, transparent 70%); top: -100px; right: -100px; }
-.nebula-2 { width: 500px; height: 500px; background: radial-gradient(circle, #3b82f6, transparent 70%); bottom: -100px; left: -100px; }
-
-/* 1. Navbar Styling */
-.navbar {
+/* --- DROPDOWN NAVIGATION --- */
+.dropdown {
     position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 3rem;
-    background: rgba(11, 15, 25, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ffffff;
+.dropdown-btn .arrow {
+    font-size: 0.7rem;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
 }
 
-.nav-links {
-    display: flex;
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 240px;
+    background: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0.8rem 0;
     list-style: none;
-    gap: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
 }
 
-.nav-links a {
-    color: #9ca3af;
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-btn .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: #d1d5db;
+    font-size: 0.88rem;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.3s;
+    transition: background 0.2s, color 0.2s;
 }
 
-.nav-links a:hover {
+.dropdown-menu li a:hover {
+    background: rgba(59, 130, 246, 0.2);
     color: #3b82f6;
 }
 
-/* Main Content & Title */
-.main-wrapper {
-    position: relative;
-    z-index: 10;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+/* --- DEDICATED SERVICE PAGES --- */
+.back-btn-container {
+    margin-bottom: 2rem;
 }
 
-.page-title {
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(59, 130, 246, 0.25);
     color: #ffffff;
+    transform: translateX(-4px);
 }
 
-/* 2. Exact 4-Column Layout (Sketch) */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
-    gap: 1.5rem;
-    align-items: stretch;
+.service-wrapper {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
 }
 
-.grid-box {
-    background: rgba(17, 24, 39, 0.65);
+.service-card-single {
+    background: rgba(17, 24, 39, 0.7);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 2.5rem;
 }
 
-/* Image Cards */
-.image-card {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-}
-
-.image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-}
-
-/* Text Cards */
-.text-card h2 {
-    font-size: 1.5rem;
+.service-card-single h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
     color: #ffffff;
-    margin-bottom: 0.2rem;
 }
 
-.text-card .role {
-    display: inline-block;
-    color: #3b82f6;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-}
-
-.text-card p {
+.service-card-single p {
+    font-size: 1.05rem;
+    line-height: 1.8;
     color: #d1d5db;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 0.8rem;
-}
-
-/* Responsive stack for small mobile screens */
-@media (max-width: 900px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
 }
