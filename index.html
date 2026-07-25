@@ -48,7 +48,8 @@
             align-items: center;
         }
 
-        .nav-links a {
+        .nav-links a,
+        .nav-links .nav-item-disabled {
             color: #9ca3af;
             text-decoration: none;
             font-size: 0.95rem;
@@ -56,7 +57,8 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links .nav-item-disabled:hover {
             color: #3b82f6;
         }
 
@@ -212,10 +214,10 @@
         <div class="logo">CreateForMe</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
+                <li><span class="nav-item-disabled">About</span></li>
                 
                 <li class="dropdown">
-                    <a href="services.html" class="dropdown-btn">Services We Offer <span class="arrow">▼</span></a>
+                    <a href="javascript:void(0)" class="dropdown-btn">Services We Offer <span class="arrow">▼</span></a>
                     <ul class="dropdown-menu">
                         <li><a href="services/thumbnail-design.html">Thumbnail Design</a></li>
                         <li><a href="services/ai-image-generation.html">AI Image Generation</a></li>
@@ -231,7 +233,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="portfolio.html" class="dropdown-btn">Portfolio <span class="arrow">▼</span></a>
+                    <a href="javascript:void(0)" class="dropdown-btn">Portfolio <span class="arrow">▼</span></a>
                     <ul class="dropdown-menu">
                         <li><a href="portfolio/videos.html">Video</a></li>
                         <li><a href="portfolio/images.html">Images</a></li>
@@ -254,25 +256,25 @@
         <div class="about-grid">
             
             <div class="grid-box image-card">
-                <img src="assets/founders/keshav.jpg" alt="Keshav Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Keshav+Photo';">
+                <img src="keshav.png" alt="Keshav Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Keshav+Photo';">
             </div>
 
             <div class="grid-box text-card">
                 <h2>Keshav Shastry</h2>
-                <span class="role">Founder & Creative Lead</span>
+                <span class="role">CoFounder & Creative Designer</span>
                 <p>Grade 8 Student at Global Indian International School (GIIS), Noida.</p>
                 <p>Keshav Shastry is a passionate young creator with a strong interest in design, artificial intelligence, and digital media. Constantly exploring new technologies and creative tools, he enjoys transforming ideas into visually appealing and impactful content. Every project is approached with curiosity, dedication, and a commitment to continuous learning.</p>
             </div>
 
             <div class="grid-box text-card">
                 <h2>Namit Shastry</h2>
-                <span class="role">Mentor & Advisor</span>
+                <span class="role">CoFounder & Creative Advisor</span>
                 <p>Author, Student & Tech Enthusiast</p>
                 <p>Mentored by Namit Shastry, an author, student, and technology enthusiast with experience in writing, research, digital content creation, and AI-powered workflows. Namit is the author of <em>The Mysterious Call</em>, recipient of the Aalekh Award, recognized by INTACH, and recipient of the Young Change Maker Award (AIIMS Delhi - MATE).</p>
             </div>
 
             <div class="grid-box image-card">
-                <img src="assets/founders/namit.jpg" alt="Namit Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Namit+Photo';">
+                <img src="namit.jpg" alt="Namit Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Namit+Photo';">
             </div>
 
         </div>
