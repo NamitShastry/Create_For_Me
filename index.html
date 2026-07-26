@@ -4,209 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreateForMe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- RESET & BASIC STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #070a13;
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            position: relative;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 3rem;
-            background: rgba(11, 15, 25, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a,
-        .nav-links .nav-item-disabled {
-            color: #9ca3af;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links .nav-item-disabled:hover {
-            color: #3b82f6;
-        }
-
-        /* --- DROPDOWN MENU --- */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-btn {
-            cursor: pointer;
-        }
-
-        .dropdown-btn .arrow {
-            font-size: 0.7rem;
-            margin-left: 4px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 240px;
-            background: rgba(11, 15, 25, 0.95);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 0.8rem 0;
-            list-style: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown:hover .dropdown-btn .arrow {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-menu li a {
-            display: block;
-            padding: 0.6rem 1.2rem;
-            color: #d1d5db;
-            font-size: 0.88rem;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .dropdown-menu li a:hover {
-            background: rgba(59, 130, 246, 0.2);
-            color: #3b82f6;
-        }
-
-        /* --- MAIN CONTENT & TITLE --- */
-        .main-wrapper {
-            position: relative;
-            z-index: 10;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .page-title {
-            text-align: center;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: #ffffff;
-        }
-
-        /* --- 4-COLUMN LAYOUT (Keshav Photo | Keshav Text | Namit Text | Namit Photo) --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
-            gap: 1.5rem;
-            align-items: stretch;
-        }
-
-        .grid-box {
-            background: rgba(17, 24, 39, 0.65);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 1.5rem;
-        }
-
-        /* Image Cards */
-        .image-card {
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            min-height: 300px;
-            background: #111827;
-        }
-
-        .image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        /* Text Cards */
-        .text-card h2 {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-bottom: 0.2rem;
-        }
-
-        .text-card .role {
-            display: inline-block;
-            color: #3b82f6;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .text-card p {
-            color: #d1d5db;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-        }
-
-        /* Mobile View (Stacking) */
-        @media (max-width: 900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -256,7 +54,7 @@
         <div class="about-grid">
             
             <div class="grid-box image-card">
-                <img src="keshav.png" alt="Keshav Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Keshav+Photo';">
+                <img src="keshav.png" alt="Keshav Shastry" onerror="this.src='https://via.placeholder.com/280x380/e2e8f0/0f172a?text=Keshav+Photo';">
             </div>
 
             <div class="grid-box text-card">
@@ -272,7 +70,7 @@
             </div>
 
             <div class="grid-box image-card">
-                <img src="namit.jpg" alt="Namit Shastry" onerror="this.src='https://via.placeholder.com/280x380/1e293b/ffffff?text=Namit+Photo';">
+                <img src="namit.jpg" alt="Namit Shastry" onerror="this.src='https://via.placeholder.com/280x380/e2e8f0/0f172a?text=Namit+Photo';">
             </div>
 
         </div>
