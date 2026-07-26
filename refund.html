@@ -121,7 +121,7 @@
             font-size: 3.5rem;
             color: #0f172a;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .content-card {
@@ -131,7 +131,7 @@
             border-radius: 24px;
             padding: 3rem;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-            animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: floatUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .policy-block {
@@ -159,12 +159,6 @@
             font-weight: 600;
             color: #0f172a;
             border-bottom: 2px solid #2563eb;
-        }
-
-        @keyframes cloudAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         @keyframes fadeInDown {
