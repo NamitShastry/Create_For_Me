@@ -4,27 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refund Policy | CreateForMe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@300;400&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #070a13; color: #ffffff; min-height: 100vh; padding: 3rem 1.5rem; }
-        .wrapper { max-width: 800px; margin: 0 auto; }
-        .back-btn { display: inline-block; color: #3b82f6; text-decoration: none; font-weight: 600; background: rgba(59, 130, 246, 0.1); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid rgba(59, 130, 246, 0.3); margin-bottom: 2rem; transition: all 0.3s; }
-        .back-btn:hover { background: rgba(59, 130, 246, 0.25); color: #ffffff; }
-        .card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 2.5rem; }
-        h1 { font-size: 2.2rem; margin-bottom: 1.5rem; color: #ffffff; }
-        p { font-size: 1.05rem; line-height: 1.8; color: #d1d5db; margin-bottom: 1rem; }
+        /* Vibrant Moving Gradient Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            min-height: 100vh;
+            color: #0f172a;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container & Header Animations */
+        .page-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fancy-title {
+            font-family: 'Playwrite CU', cursive, sans-serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.5rem;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+            to { text-shadow: 0 6px 25px rgba(255, 255, 255, 0.6); }
+        }
+
+        /* Refund Card Wrapper */
+        .policy-wrapper {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 2.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            animation: cardEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px) scale(0.98);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Animated Text Sections */
+        .policy-block {
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: textSlide 0.8s ease forwards;
+        }
+
+        .policy-block:nth-child(1) { animation-delay: 0.5s; }
+        .policy-block:nth-child(2) { animation-delay: 0.7s; }
+        .policy-block:nth-child(3) { animation-delay: 0.9s; }
+
+        .policy-block:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes textSlide {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .policy-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        /* Accent Highlight */
+        .highlight {
+            font-weight: 600;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #e73c7e, #23a6d5);
+            border-radius: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .fancy-title { font-size: 2.5rem; }
+            .policy-card { padding: 2rem; }
+            .policy-block p { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <a href="index.html" class="back-btn">← Back to Home</a>
-        <div class="card">
-            <h1>Refund Policy</h1>
-            <p>Customer satisfaction is our highest priority. If you're not completely satisfied with the initial delivery, we'll gladly work with you through reasonable revisions to ensure the final result meets your expectations.</p>
-            <p>Because our services involve custom digital work created specifically for each client, refunds are generally not available once the project has been completed and delivered. However, if we're unable to complete your project as agreed or if an issue arises from our side, we'll work with you to find a fair and reasonable solution.</p>
-            <p>If you have any concerns at any stage of the project, please don't hesitate to contact us. Open communication helps us deliver the best possible experience.</p>
+
+    <header class="navbar">
+        <div class="logo">CreateForMe</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">About</a></li>
+                
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Services We Offer <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thumbnail-design.html">Thumbnail Design</a></li>
+                        <li><a href="ai-image-generation.html">AI Image Generation</a></li>
+                        <li><a href="ai-video-generation.html">AI Video Generation</a></li>
+                        <li><a href="voice-over.html">Voice Over</a></li>
+                        <li><a href="book-writing-guidance.html">Book Writing (guidance only)</a></li>
+                        <li><a href="ghostwriting.html">Ghost Writing</a></li>
+                        <li><a href="blog-articles.html">Blog Articles</a></li>
+                        <li><a href="newsletter-writing.html">Newsletter Writing</a></li>
+                        <li><a href="resume-cv.html">Resume/CV</a></li>
+                        <li><a href="custom-project.html">Custom Project</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Portfolio <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../portfolio/videos.html">Video</a></li>
+                        <li><a href="../portfolio/images.html">Images</a></li>
+                        <li><a href="../portfolio/before-after.html">Before & After</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li><a href="../privacy.html">Privacy</a></li>
+                <li><a href="refund.html">Refund</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-wrapper">
+        
+        <div class="page-header">
+            <h1 class="fancy-title">Refund Policy</h1>
         </div>
-    </div>
+
+        <div class="policy-wrapper">
+            <div class="policy-card">
+                
+                <div class="policy-block">
+                    <p>
+                        <span class="highlight">Customer satisfaction is our highest priority.</span> If you're not completely satisfied with the initial delivery, we'll gladly work with you through reasonable revisions to ensure the final result meets your expectations.
+                    </p>
+                </div>
+
+                <div class="policy-block">
+                    <p>
+                        Because our services involve custom digital work created specifically for each client, refunds are generally not available once the project has been completed and delivered. However, if we're unable to complete your project as agreed or if an issue arises from our side, we'll work with you to find a fair and reasonable solution.
+                    </p>
+                </div>
+
+                <div class="policy-block">
+                    <p>
+                        If you have any concerns at any stage of the project, please don't hesitate to <span class="highlight">contact us</span>. Open communication helps us deliver the best possible experience.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
 </body>
 </html>
