@@ -143,6 +143,7 @@
 
         .pricing-block:nth-child(1) { animation-delay: 0.2s; }
         .pricing-block:nth-child(2) { animation-delay: 0.4s; }
+        .pricing-block:nth-child(3) { animation-delay: 0.6s; }
 
         .pricing-block:last-child {
             margin-bottom: 0;
@@ -152,6 +153,23 @@
             font-size: 1.15rem;
             line-height: 1.8;
             color: #334155;
+        }
+
+        /* Pricing Image Container and Responsive Styling */
+        .pricing-image-box {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .pricing-img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            display: block;
+            margin: 0 auto;
         }
 
         .highlight {
@@ -230,8 +248,12 @@
                 <p><span class="highlight">Every project is unique</span>, which means pricing depends on factors such as complexity, project scope, delivery timeline, and specific requirements. Simple tasks have affordable fixed pricing, while larger or custom projects receive a personalized quotation.</p>
             </div>
 
+            <div class="pricing-block pricing-image-box">
+                <img src="pricing-table.png" alt="Pricing Options and Plans" class="pricing-img" onerror="this.src='https://via.placeholder.com/700x400/0f172a/ffffff?text=Pricing+Details';">
+            </div>
+
             <div class="pricing-block">
-                <p>Before any work begins, you'll receive a clear estimate with no hidden charges, ensuring complete transparency throughout the process. If you're unsure which service best fits your needs, feel free to <span class="highlight">contact us</span> for a free consultation and quote.</p>
+                <p>Before any work begins, you'll receive a clear estimate with no hidden charges, ensuring complete transparency throughout the process. If you're unsure which service best fits your needs, feel free to <a href="contact.html" style="text-decoration: none;"><span class="highlight">contact us</span></a> for a free consultation and quote.</p>
             </div>
         </div>
     </main>
